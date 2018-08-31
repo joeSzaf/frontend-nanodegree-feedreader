@@ -53,32 +53,58 @@ $(function() {
         });
     });
 
-    /* TODO: Write a new test suite named "The menu" */
+    /* DONE: Write a new test suite named "The menu" */
     describe('The menu', function(){
 
-      /* TODO: Write a test that ensures the menu element is
+      var spyEvent;
+
+      /* DONE: Write a test that ensures the menu element is
        * hidden by default. You'll have to analyze the HTML and
        * the CSS to determine how we're performing the
        * hiding/showing of the menu element.
        */
 
       it('has the menu element is hidden by default', function(){
-        console.log($('body').attr('class'));
         expect($('body').attr('class')).toBe('menu-hidden');
       });
 
-       /* TODO: Write a test that ensures the menu changes
+      it('is clickable', function(){
+
+        var menu = $('.menu-icon-link');
+        var body = $('body');
+
+        var spyEvent = spyOnEvent('.menu-icon-link', 'click');
+        menu.click();
+        expect('click').toHaveBeenTriggeredOn('.menu-icon-link');
+        expect(spyEvent).toHaveBeenTriggered();
+
+        });
+
+       /* DONE: Write a test that ensures the menu changes
         * visibility when the menu icon is clicked. This test
         * should have two expectations: does the menu display when
         * clicked and does it hide when clicked again.
         */
 
+      it('changes visibility when clicked', function(){
+
+        var menu = $('.menu-icon-link');
+        var body = $('body');
+
+        // resents the class on the body
+        body.removeClass();
+
+        // clicks the menu and checks to see if the menu hides (toggles the hide class)
+        menu.click();
+        expect(body.attr('class')).toBe('menu-hidden');
+
+        // clicks the menu and checks to see if the menu unhides (toggles the hide class)
+        menu.click();
+        expect(body.attr('class')).toBe('');
+        console.log(body.attr('class'));
+      });
+
     });
-
-
-
-
-
 
     /* TODO: Write a new test suite named "Initial Entries" */
 

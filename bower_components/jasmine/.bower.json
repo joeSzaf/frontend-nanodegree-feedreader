@@ -1,0 +1,50 @@
+{
+  "name": "jasmine-core",
+  "homepage": "https://jasmine.github.io",
+  "authors": [
+    "slackersoft <gregg@slackersoft.net>"
+  ],
+  "description": "Official packaging of Jasmine's core files",
+  "keywords": [
+    "test",
+    "jasmine",
+    "tdd",
+    "bdd"
+  ],
+  "license": "MIT",
+  "moduleType": "globals",
+  "main": "lib/jasmine-core/jasmine.js",
+  "ignore": [
+    "**/.*",
+    "dist",
+    "grunt",
+    "node_modules",
+    "pkg",
+    "release_notes",
+    "spec",
+    "src",
+    "Gemfile",
+    "Gemfile.lock",
+    "Rakefile",
+    "jasmine-core.gemspec",
+    "*.sh",
+    "*.py",
+    "Gruntfile.js",
+    "lib/jasmine-core.rb",
+    "lib/jasmine-core/boot/",
+    "lib/jasmine-core/spec",
+    "lib/jasmine-core/version.rb",
+    "lib/jasmine-core/*.py",
+    "sauce_connect.log"
+  ],
+  "version": "3.2.1",
+  "_release": "3.2.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "v3.2.1",
+    "commit": "da37b820039eecd1f28c0d80b17dcf81a4031735"
+  },
+  "_source": "https://github.com/pivotal/jasmine.git",
+  "_target": ">=2",
+  "_originalSource": "jasmine"
+}

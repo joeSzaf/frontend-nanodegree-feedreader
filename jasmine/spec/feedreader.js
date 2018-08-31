@@ -101,7 +101,6 @@ $(function() {
         // clicks the menu and checks to see if the menu unhides (toggles the hide class)
         menu.click();
         expect(body.attr('class')).toBe('');
-        console.log(body.attr('class'));
       });
 
     });
@@ -119,16 +118,37 @@ $(function() {
           loadFeed(0, done);
         });
 
-        it('should complete its work', function(){
+        it('should complete its work', function(done){
           // at least a single .entry element in the .feed container
           expect($( ".feed .entry" ).length).toBeGreaterThan(0);
+          done();
         });
 
       });
-    /* TODO: Write a new test suite named "New Feed Selection" */
 
-        /* TODO: Write a test that ensures when a new feed is loaded
-         * by the loadFeed function that the content actually changes.
-         * Remember, loadFeed() is asynchronous.
-         */
+    /* DONE: Write a new test suite named "New Feed Selection" */
+    describe('New Feed Selection', function(){
+
+      var firstFeed;
+      var secondFeed;
+
+   /* DONE: Write a test that ensures when a new feed is loaded
+    * by the loadFeed function that the content actually changes.
+    * Remember, loadFeed() is asynchronous.
+    */
+      beforeEach(function(done) {
+        loadFeed(0, function() {
+          firstFeed = $('.feed').html();
+          loadFeed(1, done);
+        });
+       });
+
+       secondFeed = $('.feed').html()
+
+       it('should load a new feed', function() {
+         expect(secondFeed).not.toBe(firstFeed);
+       });
+
+    });
+
 }());
